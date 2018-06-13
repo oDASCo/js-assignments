@@ -38,7 +38,7 @@ function concatenateStrings(x, y) {
  *   ''      => 0
  */
 function getStringLength(a) {
-   var number = a.length + 1;
+   var number = a.length;
 }
 
 /**
