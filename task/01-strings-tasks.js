@@ -29,7 +29,7 @@ function concatenateStrings(x, y) {
 /**
  * Возвращает длинну строки
  *
- * @param {string} value
+ * @param {string} a
  * @return {number}
  *
  * @example
@@ -37,8 +37,8 @@ function concatenateStrings(x, y) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(value) {
-    throw new Error('Not implemented');
+function getStringLength(a) {
+   a.length - 1;
 }
 
 /**
