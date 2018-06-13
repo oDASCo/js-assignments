@@ -12,8 +12,8 @@
 /**
  * Возвращает результат конкатенации двух строк
  *
- * @param {string} value1
- * @param {string} value2
+ * @param {string} x
+ * @param {string} y
  * @return {string}
  *
  * @example
@@ -21,8 +21,8 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(value1, value2) {
-    throw new Error('Not implemented');
+function concatenateStrings(x, y) {
+    return x+y;
 }
 
 
