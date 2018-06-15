@@ -70,7 +70,12 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    throw new Error('Not implemented');
+    function myTaggedLiteral(First_Name, Last_Name) {
+        return First_Name;
+        return Last_Name;
+    }
+    myTaggedLiteral`Hello, ${First_Name} ${Last_Name}!`;
+
 }
 
 
