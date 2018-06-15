@@ -70,10 +70,10 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    function myTaggedLiteral(values) {
+    function myTaggedLiteral(strings, ...values) {
         return values;
     }
-    let value = myTaggedLiteral`Hello, ${First_Name} ${Last_Name}!`;
+    myTaggedLiteral`Hello, ${First_Name} ${Last_Name}!`;
 }
 
 
