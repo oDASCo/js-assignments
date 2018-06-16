@@ -107,11 +107,15 @@ function removeLeadingAndTrailingWhitespaces(value) {
     var sumb2 = '\t'
     if ((value.charAt(0)== sumb1) || (value.charAt(0)== sumb2) || (value.charAt(0)== sumb11) ){
         return value.replace(value.charAt(0), "").replace(value.charAt(1), "");
+    } else {
+        if ((value.slice(-1) == sumb1) || (value.slice(-1) == sumb2)) {
+            return value.replace(value.slice(-1), "");
+        }
+        else {
+            return value;
+        }
     }
 
-    if ((value.slice(-1)== sumb1)|| (value.slice(-1)== sumb2)){
-        return value.replace(value.slice(-1), "");
-    }
 }
 
 /**
