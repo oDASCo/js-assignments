@@ -120,7 +120,6 @@ function repeatString(value, count) {
         var new_value = "";
     while (count-- > 0) new_value += value;
     return new_value;
-
 }
 
 /**
@@ -136,7 +135,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+   return str.replace(/value/g, "");
 }
 
 /**
