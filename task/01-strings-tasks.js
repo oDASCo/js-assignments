@@ -106,7 +106,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
     var sumb11 = '  '
     var sumb2 = '\t'
     if ((value.charAt(0)== sumb1) || (value.charAt(0)== sumb2) || (value.charAt(0)== sumb11) ){
-        return value.replace(value.charAt(0), "");
+        return value.replace(value.charAt(0), "").replace(value.charAt(1), "");
     }
 
     if ((value.slice(-1)== sumb1)|| (value.slice(-1)== sumb2)){
