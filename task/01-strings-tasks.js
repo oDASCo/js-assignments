@@ -117,7 +117,9 @@ return value.replace(/(^\s*)|(\s*)$/g, '');
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+    for (var i=0; i <= count; i++) {
+        return value + value;
+    }
 }
 
 /**
