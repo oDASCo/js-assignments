@@ -180,7 +180,8 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    return array = str.split(";");
+    var array = str.split(";");
+    return array;
 }
 
 /**
