@@ -117,10 +117,10 @@ return value.replace(/(^\s*)|(\s*)$/g, '');
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    for (var i=0; i <= count; i++) {
         var new_value = "";
-        return new_value += value;
-    }
+    while (count-- > 0) new_value += value;
+    return new_value;
+
 }
 
 /**
