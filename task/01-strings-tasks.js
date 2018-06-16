@@ -103,8 +103,9 @@ function getFirstChar(value) {
  */
 function removeLeadingAndTrailingWhitespaces(value) {
     var sumb1 = ' ';
+    var sumb11 = '  '
     var sumb2 = '\t'
-    if ((value.charAt(0)== sumb1) || (value.charAt(0)== sumb2) ){
+    if ((value.charAt(0)== sumb1) || (value.charAt(0)== sumb2) || (value.charAt(0)== sumb11) ){
         return value.replace(value.charAt(0), "");
     }
 
