@@ -118,7 +118,8 @@ return value.replace(/(^\s*)|(\s*)$/g, '');
  */
 function repeatString(value, count) {
     for (var i=0; i <= count; i++) {
-        return value + value;
+        var new_value = "";
+        return new_value += value;
     }
 }
 
