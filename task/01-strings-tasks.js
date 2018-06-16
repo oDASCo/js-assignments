@@ -135,7 +135,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-   return str.replace(/value/g, "");
+   return str.replace(/value/i, '');
 }
 
 /**
