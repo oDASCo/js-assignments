@@ -102,7 +102,14 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
+    var sumb1 = ' ';
+    var sumb2 = '\t'
+    if ((value.charAt(0)== sumb1) || (value.slice(-1)== sumb1)){
+        return value.split(sumb1);
+    }
+    if ((value.charAt(0)== sumb2) || (value.slice(-1)== sumb2)){
+        return value.split(sumb2);
+    }
 }
 
 /**
