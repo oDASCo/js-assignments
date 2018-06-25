@@ -208,7 +208,16 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+const angle_1 = '┌';
+const line_1 = '─';
+const angle_2 = '┐';
+const line_2 = '│';
+const angle_3 =  '└';
+const angle_4 = '┘';
+for (var i = 0; i <=height; i++){
+    return line_1[i];
+}
+
 }
 
 
