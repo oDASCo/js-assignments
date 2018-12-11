@@ -38,7 +38,7 @@ function concatenateStrings(x, y) {
  *   ''      => 0
  */
 function getStringLength(a) {
-   var number = a.length;
+   let number = a.length;
    return number;
 }
 
@@ -70,8 +70,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    var arr = value.split("!");
-  var str = arr[0].split(" ");
+    let arr = value.split("!");
+  let str = arr[0].split(" ");
   return `${str[1]} ${str[2]}`;
 }
 
@@ -117,7 +117,7 @@ return value.replace(/(^\s*)|(\s*)$/g, '');
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-        var new_value = "";
+        let new_value = "";
     while (count-- > 0) new_value += value;
     return new_value;
 }
@@ -135,7 +135,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    var val = new RegExp(value);
+    let val = new RegExp(value);
     return str.replace(val, '');
 }
 
@@ -180,7 +180,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    var array = str.split(";");
+    let array = str.split(";");
     return array;
 }
 
@@ -214,9 +214,10 @@ const angle_2 = '┐';
 const line_2 = '│';
 const angle_3 =  '└';
 const angle_4 = '┘';
-for (var i = 0; i <=height; i++){
-    return line_1[i];
-}
+const space = ' ';
+
+
+    return angle_1 + line_1*(width-2) + angle_2 + '\n' + line_2*(height-2) + space*(width-2) + line_2*(height-2) + '\n' + angle_3 + line_1*(width-2) + angle_4;
 
 }
 
