@@ -95,7 +95,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  */
 function getLinearEquationRoot(a, b) {
 
-    let result = - b/a;
+    let result = -b / a;
     return result;
 }
 
@@ -140,7 +140,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  */
 function getLastDigit(value) {
     let numArr = String(value).split("");
-    return numArr[numArr.length-1];
+    return numArr[numArr.length - 1];
 }
 
 
@@ -173,7 +173,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
-    return Math.sqrt(Math.pow(a, 2)+Math.pow(b, 2)+Math.pow(c, 2));
+    return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2));
 }
 
 /**
@@ -194,10 +194,20 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    let powNum = "1" + "0".repeat(pow);
-    let myNumber = num / +powNum;
-     let myPowNum =  (Math.round(myNumber * +powNum) / +powNum );
-     return myPowNum * +powNum;
+    switch (pow) {
+        case 0:
+            return (num / 10000).toFixed(4) * 10000;
+            break;
+        case 1:
+            return (num / 10000).toFixed(3) * 10000;
+            break;
+        case 2:
+            return (num / 10000).toFixed(2) * 10000;
+            break;
+        case 3:
+            return (num / 10000).toFixed(1) * 10000;
+            break;
+    }
 }
 
 /**
@@ -218,7 +228,17 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    if(n == 1) {
+        return false;
+    }
+    for (let i = 2; i*i <= n; i++){
+        if ((n%i == 0)) {
+            return false;
+        }
+
+    }
+    return true;
+
 }
 
 /**
@@ -237,7 +257,10 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-    throw new Error('Not implemented');
+    if ((value == null) || (value === undefined) || (isNaN(value))){
+        return def;
+    } else
+    return +value;
 }
 
 module.exports = {
