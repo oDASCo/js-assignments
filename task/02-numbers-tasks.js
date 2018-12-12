@@ -94,7 +94,9 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+
+    let result = - b/a;
+    return result;
 }
 
 
@@ -116,7 +118,12 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    let scal = x1 * x2 + y1 * y2;
+    let modul_a = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
+    let modul_b = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
+    let a_result = scal / (modul_a * modul_b);
+    let angle = Math.acos(a_result);
+    return angle;
 }
 
 /**
@@ -132,7 +139,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    let numArr = String(value).split("");
+    return numArr[numArr.length-1];
 }
 
 
@@ -148,7 +156,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    return +value;
 }
 
 /**
@@ -165,7 +173,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
-    throw new Error('Not implemented');
+    return Math.sqrt(Math.pow(a, 2)+Math.pow(b, 2)+Math.pow(c, 2));
 }
 
 /**
@@ -186,7 +194,10 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+    let powNum = "1" + "0".repeat(pow);
+    let myNumber = num / +powNum;
+     let myPowNum =  (Math.round(myNumber * +powNum) / +powNum );
+     return myPowNum * +powNum;
 }
 
 /**
