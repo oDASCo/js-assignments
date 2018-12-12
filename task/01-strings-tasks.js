@@ -8,7 +8,6 @@
  ********************************************************************************************/
 
 
-
 /**
  * Возвращает результат конкатенации двух строк
  *
@@ -22,7 +21,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(x, y) {
-    return x+y;
+    return x + y;
 }
 
 
@@ -38,8 +37,8 @@ function concatenateStrings(x, y) {
  *   ''      => 0
  */
 function getStringLength(a) {
-   let number = a.length;
-   return number;
+    let number = a.length;
+    return number;
 }
 
 /**
@@ -56,7 +55,7 @@ function getStringLength(a) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    return 'Hello, '+firstName+' '+lastName+'!';
+    return 'Hello, ' + firstName + ' ' + lastName + '!';
 }
 
 /**
@@ -71,8 +70,8 @@ function getStringFromTemplate(firstName, lastName) {
  */
 function extractNameFromTemplate(value) {
     let arr = value.split("!");
-  let str = arr[0].split(" ");
-  return `${str[1]} ${str[2]}`;
+    let str = arr[0].split(" ");
+    return `${str[1]} ${str[2]}`;
 }
 
 
@@ -102,7 +101,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-return value.replace(/(^\s*)|(\s*)$/g, '');
+    return value.replace(/(^\s*)|(\s*)$/g, '');
 }
 
 /**
@@ -117,14 +116,14 @@ return value.replace(/(^\s*)|(\s*)$/g, '');
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-        let new_value = "";
+    let new_value = "";
     while (count-- > 0) new_value += value;
     return new_value;
 }
 
 /**
  * Удаляет первую встретившуюся последовательность симвоов из строки
- * 
+ *
  * @param {string} str
  * @param {string} value
  * @return {string}
@@ -166,7 +165,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-   return str.toUpperCase();
+    return str.toUpperCase();
 }
 
 /**
@@ -208,16 +207,30 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-const angle_1 = '┌';
-const line_1 = '─';
-const angle_2 = '┐';
-const line_2 = '│';
-const angle_3 =  '└';
-const angle_4 = '┘';
-const space = ' ';
+    const angle_1 = '┌';
+    const line_1 = '─';
+    const angle_2 = '┐';
+    const line_2 = '│';
+    const angle_3 = '└';
+    const angle_4 = '┘';
+    const space = " ";
+
+    let line_width = width - 2;
+
+    let repeat_line_1 = "";
+    while (line_width-- > 0) repeat_line_1 += line_1;
+
+    let repeat_space = space.repeat(width - 2);
+
+    let top_line = `${angle_1}${repeat_line_1}${angle_2}\n`
+
+    let middle_line = line_2 + repeat_space + line_2 + '\n'
+    let bottom_line = `${angle_3}${repeat_line_1}${angle_4}\n`
+
+    let repeat_middle_line = middle_line.repeat(height - 2);
 
 
-    return angle_1 + line_1*(width-2) + angle_2 + '\n' + line_2*(height-2) + space*(width-2) + line_2*(height-2) + '\n' + angle_3 + line_1*(width-2) + angle_4;
+    return top_line + repeat_middle_line + bottom_line;
 
 }
 
@@ -261,23 +274,23 @@ function isString(value) {
 
 /**
  * Возвращает id игровой карты
- * 
+ *
  * Исходная доска игровых карт представлена следующим порядком строк:
- * 
+ *
  *  'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
  *  'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
  *  'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
  *  'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
- * 
+ *
  * (see https://en.wikipedia.org/wiki/Standard_52-card_deck)
  * Function returns the zero-based index of specified card in the initial deck above.
- * 
+ *
  * @param {string} value
  * @return {number}
  *
  * @example
  *   'A♣' => 0
- *   '2♣' => 1 
+ *   '2♣' => 1
  *   '3♣' => 2
  *     ...
  *   'Q♠' => 50
