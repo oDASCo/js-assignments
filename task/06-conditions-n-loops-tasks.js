@@ -232,7 +232,25 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    let firstSym = '';
+    let secondSym = '';
+
+    if (isStartIncluded === true) {
+        firstSym = '[';
+    } else {
+        firstSym = '(';
+    }
+    if (isEndIncluded === true) {
+        secondSym = ']';
+    } else {
+        secondSym = ')';
+    }
+    if (a < b) {
+        return firstSym+a+', '+b+secondSym;
+    } else {
+        return firstSym+b+', '+a+secondSym;
+    }
+
 }
 
 
@@ -249,7 +267,9 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    let arr = str.split('');
+    arr.reverse();
+    return arr.join('');
 }
 
 
@@ -266,7 +286,8 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    let result = num.toString().split('').reverse().join('');
+    return +result;
 }
 
 
@@ -310,7 +331,23 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    let sum = 0;
+
+    let result = num.toString().split('');
+    for (let i = 0; i <= result.length-1; i++) {
+        sum = sum + +result[i];
+    }
+
+    if (sum.toString().split('').length < 2) {
+        return sum;
+    } else {
+        let finish = sum.toString().split('');
+        let s = 0;
+        for (let j = 0; j<=finish.length-1; j++){
+            s = s+ +finish[j];
+        }
+        return s;
+    }
 }
 
 

@@ -91,8 +91,19 @@ let year = date.getFullYear();
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 function timeSpanToString(startDate, endDate) {
+    function getTwoDigits(n) {
+        return (n < 10 ? '0' : '') + n;
+    }
 
-    throw new Error('Not implemented');
+    function getThreeDigits(n) {
+        return (n < 100 ? '0' : '') + getTwoDigits(n);
+    }
+
+    let hours = endDate.getUTCHours() - startDate.getUTCHours();
+    let minutes = endDate.getUTCMinutes() - startDate.getUTCMinutes();
+    let seconds = endDate.getUTCSeconds() - startDate.getUTCSeconds();
+    let milliseconds = (endDate.getTime() - startDate.getTime()) % 1000;
+    return getTwoDigits(hours) + ":" + getTwoDigits(minutes) + ":" + getTwoDigits(seconds) + "." + getThreeDigits(milliseconds);
 }
 
 
@@ -110,7 +121,10 @@ function timeSpanToString(startDate, endDate) {
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
 function angleBetweenClockHands(date) {
-    throw new Error('Not implemented');
+    let hourAngle = (date.getUTCHours() % 12 * 60 + date.getMinutes() ) * 0.5;
+    let minuteAngle = date.getUTCMinutes() * 6;
+    let diff = Math.abs(hourAngle - minuteAngle);
+    return Math.min(diff, 360 - diff) * Math.PI / 180;
 }
 
 
